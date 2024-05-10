@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 15px;
+}
+
+label {
+    width: 250px;
+    height: 100px;
+    background-color: #3b92d9;
+    display: block;
+    border-radius: 100px;
+    margin: 0px auto;
+    cursor: pointer;
+    position: relative;
+}
+
+.circle {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 80px;
+    height: 80px;
+    max-resolution: 5px;
+    background-color: #fff;
+    border-radius: 100px;
+    transition: 0.5s;
+}
+
+.light_theme {
+    transition: 0.5s;
+}
+
+.sun {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 100px;
+    right: 80px;
+    top: 8px;
+    transition: 0.5s;
+}
+
+.clouds {
+    position: relative;
+    width: 100px;
+    height: 70px;
+    left: 120px;
+    top: 25px;
+    transition: 0.5s;
+}
+
+.cloud1 {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 100px;
+}
+
+.cloud2 {
+    position: absolute;
+    bottom: 25px;
+    left: 60px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 100px;
+}
+
+.cloud3 {
+    position: absolute;
+    bottom: 25px;
+    left: 60px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 100px;
+}
+
+/* To slide the circle right and left according to checkbox state. */
+input[type="checkbox"]:checked+label .circle {
+    left: 150px;
+}
+
+/* Change the label (toggle button) background color */
+input[type="checkbox"]:checked+label {
+    background-color: #000;
+}
+
+/* Hide the light theme when checkbox is selected. */
+input[type="checkbox"]:checked+label .light_theme {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+/* Change the sun position (slightly down) when checkbox is selected. So that it when checkbox is unselected it get its previous styles (look like rising sun.)  */
+input[type="checkbox"]:checked+label .light_theme .sun {
+    top: 40px;
+}
+
+/* Change the clouds position (slightly left)  when checkbox is selected. So that it when checkbox is unselected it get its previous styles (look like clouds are moved.)  */
+input[type="checkbox"]:checked+label .light_theme .clouds {
+    left: 50px;
+}
+
+/* Hiding the checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Showing the dark theme when checkbox is selected. */
+input[type="checkbox"]:checked+label .dark_theme {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+/* Animating the moon when checkbox is selected or dark theme is visible */
+input[type="checkbox"]:checked+label .dark_theme .moon {
+    top: 8px;
+}
+
+/* Hiding the dark theme. Only make it visible when checkbox is selected. */
+.dark_theme {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.moon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 100px;
+    left: 50px;
+    top: -20px;
+    transform: 0.5s;
+}
+
+.moon::after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: #f2f2f2;
+    border-radius: 100px;
+    left: 10px;
+    top: 25px;
+}
+
+.star1,
+.star2,
+.star3 {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 100px;
+}
+
+.star1 {
+    left: 30px;
+    top: 10px;
+}
+
+.star2 {
+    left: 120px;
+    top: 50px;
+}
+
+.star3 {
+    left: 20px;
+    top: 70px;
+}
